@@ -5,6 +5,9 @@ Michael
 '''
 print()
 
+
+
+
 GOOD = 1
 BAD = -1
 
