@@ -1,0 +1,4 @@
+git remote add origin git config https://github.com/moludoyi1/cse111
+
+git config --global user.name "moludoyi1"
+git config --global user.email "moludoyi@gmail.com"
