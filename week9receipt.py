@@ -1,6 +1,4 @@
-from ast import Return
 import csv
-from socket import create_server
 
 def main():
     products_dict = read_dict('products.csv', 0)
@@ -10,12 +8,15 @@ def main():
         csvreader = csv.reader(file)
         next (csvreader) #this skips first line in the csv file
 
+        print()
+        print('Requested Items')
         for row in csvreader:
             productnum = row[0]
+            productquan = row[1]
             products = products_dict[productnum]
             productname = products[1]
-        print()
-        print(productname)
+            productprice = products[2]
+            print(f'{productname}: {productquan} @ {productprice}')
 
 
 
