@@ -1,5 +1,7 @@
 import csv
 
+print()
+
 def main():
     products_dict = read_dict('products.csv', 0)
     print(products_dict)
@@ -41,6 +43,7 @@ def read_dict(filename, key_column_index):
             csvdict[key]= row
     return csvdict
 
-# products = read_dict('products.csv', 0)
-# print(products)
 main()
+
+
+print()
