@@ -1,8 +1,14 @@
 import csv
 
+# Import the datetime class from the datetime
+# module so that it can be used in this program.
+from datetime import datetime
+
 print()
 
 def main():
+    print('Inkom Emporium')
+    
     products_dict = read_dict('products.csv', 0)
     print(products_dict)
     
@@ -19,6 +25,15 @@ def main():
             productname = products[1]
             productprice = products[2]
             print(f'{productname}: {productquan} @ {productprice}')
+
+
+    # Call the now() method to get the current
+    # date and time as a datetime object from
+    # the computer's operating system.
+    current_date_and_time = datetime.now()
+
+    # Print the current day of the week and the current time.
+    print(f"{current_date_and_time:%A %I:%M %p}")
 
 
 
