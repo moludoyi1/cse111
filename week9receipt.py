@@ -12,38 +12,48 @@ def main():
     products_dict = read_dict('products.csv', 0)
     # print(products_dict)
     
-    with open('request.csv', 'r') as file:
-        csvreader = csv.reader(file)
-        next (csvreader) #this skips first line in the csv file
+    try:
+        with open('request.csv', 'r') as file:
+            csvreader = csv.reader(file)
+            next (csvreader) #this skips first line in the csv file
 
-        subtotal = 0
-        num_of_items = 0
-        sales_tax = 0
+            subtotal = 0
+            num_of_items = 0
+            sales_tax = 0
 
-        print()
-        print('Requested Items')
-        for row in csvreader:
-            num = row[0]
-            quantity = int(row[1])
-            products = products_dict[num]
-            name = products[1]
-            price = products[2]
-            price = float(price)
+            print()
+            print('Requested Items')
+            for row in csvreader:
+                num = row[0]
+                quantity = int(row[1])
+                products = products_dict[num]
+                name = products[1]
+                price = products[2]
+                price = float(price)
 
-            num_of_items += quantity
-            subtotal += price * quantity
-            sales_tax = 0.06 * subtotal
-            total = subtotal + sales_tax
+                num_of_items += quantity
+                subtotal += price * quantity
+                sales_tax = 0.06 * subtotal
+                total = subtotal + sales_tax
 
-            print(f'{name}: {quantity} @ {price}')
+                print(f'{name}: {quantity} @ {price}')
 
-        print()
-        print(f"Substotal: ${subtotal:.2f}")
-        print(f"Number of items: {num_of_items}")
-        print(f"Sales Tax: {sales_tax:.2f}")
-        print(f"Total: ${total:.2f}")
+            print()
+            print(f"Substotal: ${subtotal:.2f}")
+            print(f"Number of items: {num_of_items}")
+            print(f"Sales Tax: {sales_tax:.2f}")
+            print(f"Total: ${total:.2f}")
 
-        
+    except FileNotFoundError as not_found_err:
+        print(not_found_err)
+        print('make sure the spelling is right')
+
+
+    except PermissionError as perm_err:
+        print(perm_err)
+
+    except KeyError as key_err:
+        print(type(key_err).__name__, key_err)
 
     # Call the now() method to get the current
     # date and time as a datetime object from
