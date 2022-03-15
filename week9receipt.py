@@ -10,22 +10,40 @@ def main():
     print('Inkom Emporium')
     
     products_dict = read_dict('products.csv', 0)
-    print(products_dict)
+    # print(products_dict)
     
     with open('request.csv', 'r') as file:
         csvreader = csv.reader(file)
         next (csvreader) #this skips first line in the csv file
 
+        subtotal = 0
+        num_of_items = 0
+        sales_tax = 0
+
         print()
         print('Requested Items')
         for row in csvreader:
-            productnum = row[0]
-            productquan = row[1]
-            products = products_dict[productnum]
-            productname = products[1]
-            productprice = products[2]
-            print(f'{productname}: {productquan} @ {productprice}')
+            num = row[0]
+            quantity = int(row[1])
+            products = products_dict[num]
+            name = products[1]
+            price = products[2]
+            price = float(price)
 
+            num_of_items += quantity
+            subtotal += price * quantity
+            sales_tax = 0.06 * subtotal
+            total = subtotal + sales_tax
+
+            print(f'{name}: {quantity} @ {price}')
+
+        print()
+        print(f"Substotal: ${subtotal:.2f}")
+        print(f"Number of items: {num_of_items}")
+        print(f"Sales Tax: {sales_tax:.2f}")
+        print(f"Total: ${total:.2f}")
+
+        
 
     # Call the now() method to get the current
     # date and time as a datetime object from
@@ -33,6 +51,7 @@ def main():
     current_date_and_time = datetime.now()
 
     # Print the current day of the week and the current time.
+    print()
     print(f"{current_date_and_time:%A %I:%M %p}")
 
 
