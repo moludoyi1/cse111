@@ -87,7 +87,8 @@ def read_dict(filename, key_column_index):
             csvdict[key]= row
     return csvdict
 
-main()
+if __name__ == "__main__":
+    main()
 
 
 print()

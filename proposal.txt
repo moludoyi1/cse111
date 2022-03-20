@@ -1,0 +1,41 @@
+Proposal for a Student Chosen Program
+
+(This is a proposal. All proposals are written with our best knowledge
+at the beginning of a project. As we progress from the beginning to the
+end of a project, we gain more knowledge, and some of the ideas we
+proposed change. This is part of completing any project and is fine.
+However, we still must write a proposal so that our teachers or
+supervisors know what we intend to do. Please answer each of the
+following questions to the best of your knowledge.)
+
+1. What is the title of your program?
+    savings
+
+2. What real world problem will your program address or help to solve?
+    my program is going to calculate how much one makes with or without
+    taxes, every monthly bills that is paid will be inputed then the program
+    takes it out from the income to help in financial plan
+
+3. What will you learn from developing this program?
+    from this program, i hope to learn how to fully make use of different functions
+    and understand how they work
+
+
+4. What Python modules will your program use? (Some examples are: csv,
+datetime, functools, matplotlib, math, pandas, pytest, random, requests,
+and tkinter.)
+    thinking through the process, my program would be using; math, pytest,
+    datetime, csv/txt
+
+5. Will you separate your Python program into functions that each
+perform a single task?
+    yes i will separate my program into separate functions
+
+6. Will you write test functions to test many of your program functions?
+    i'm not 100 sure but i plan to write test functions
+
+(Remember that it's hard to test functions that get user input and print
+output. It's easy to test functions that don't get user input and don't
+print output but instead have parameters and return a result. Therefore,
+you should write most of your program functions to have parameters and
+return a result.)
