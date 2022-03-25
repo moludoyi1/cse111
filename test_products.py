@@ -1,6 +1,6 @@
 # Copyright 2020, Brigham Young University-Idaho. All rights reserved.
 
-from week9receipt import read_dict
+from wk9receipt import read_dict
 from os import path
 from tempfile import mktemp
 from pytest import approx

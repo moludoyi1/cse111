@@ -4,8 +4,6 @@ of provinces.txt into a list and then modifies the list.
 """
 
 
-
-
 def main():
     print()
     # Read the contents of a text file named
