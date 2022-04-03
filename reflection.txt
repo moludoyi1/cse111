@@ -1,0 +1,31 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+    i fully saw the power of functions when i begna working on my final project,
+    at first all thorough the semester i'd find it confusing using function but
+    then there'd be times where i'm like this is amazing and i understand this.
+    However, i fully saw the power of functions when i began writing my final project
+    from scratch. yes i ran into a few road blocks but then i'd reach out to see others
+    view on my idea and how i should go about it. it was just amazing that functions
+    make complex codes simplier and easier to work on.
+
+
+2. In your judgment, what is the value of test functions?
+    i'd say the value of test function is to ensure that the various functions
+    called in your main code are doing what is expected of them to do. eventhough
+    we might be very confident that those functions are doing what they are coded
+    to do; however, another way to ensure that is to have test functions in place
+    to ensure it. think of the test function another assurance for your main functions. 
+
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+    at first i'd read the error that pops up when running that program, then i'd try
+    to locate where the problem is coming from and after locating it, i'll try to fix
+    the located problem. if i'm unable to figure out what the issue, i'd reach out to
+    someone with better experience than me and have them also take a look at it. a thing
+    i can do to improve my process is to not stare at the problem for too long before
+    reaching out to others who can help, i found myself in situations where i take too
+    long to reach out to theres to help me out.

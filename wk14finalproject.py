@@ -15,7 +15,7 @@ def main():
         hourly_rate = get_hourly_pay_rate()
 
         appx_weekly_pay = get_weekly_income(hours, hourly_rate)
-        print(appx_weekly_pay)
+        print(f"Your weekly income is: ${appx_weekly_pay}")
 
         state_residence = get_dict_key()
         
@@ -29,18 +29,25 @@ def main():
         print(f'Pay after tax: ${pay_after_tax:.2f}')
 
         weekly_bills_save = get_bills()
+        print()
         weekly_total = sum(weekly_bills_save[1])
         print(f"You need to save a total of ${weekly_total:.2f} each week for your bills")
         
     except KeyError as val_err:
         print("Error:", val_err)
-        print("State is incorrecly spelt")
+        print("State is incorrectly spelt")
 
 def get_hours():
-    return int(input("How many hours do you typically work per week: "))
+    return float(input("How many hours do you typically work per week: "))
+
+def get_hours_test(value):
+    return value
 
 def get_hourly_pay_rate():
     return float(input("What's your pay per hour: $"))
+
+def get_hourly_pay_rate_test(value):
+    return value
 
 def calculate_weekly_pay(weekly_pay, tax_rate):
     tax = weekly_pay * tax_rate
@@ -53,6 +60,9 @@ def get_weekly_income(h, r):
 def get_dict_key():
     state = input("Which state do you reside in: ")
     return state
+
+def get_dict_key_test(value):
+    return value
 
 def get_state_income_tax_rate(state_income_tax_dict, state):
     # print(float(state_income_tax_dict[state] [LOWTAX_COL]))
@@ -70,28 +80,38 @@ def get_state_income_tax_dict(filename):
         for line in csvreader:
             key = line[STATE_COL]
             state_income_tax_dict[key] = line
+    # state_dict = list(state_income_tax_dict.values())
+    # print(state_dict)
     return state_income_tax_dict
 
 def get_bills():
+    print()
     bills = []
     payments = []
     continueon = True
-    while continueon == True:
-        print()
-        print('''Please select on of the options:
-        1. Add bills
-        2. Done adding bills''')
-        option = int(input("Please enter an option: "))
-        
-        if option == 1:
+
+    paybill = input("Do you pay any bills(y/n): ")
+    if paybill == 'y':
+        while continueon == True:
             print()
-            bill = input("What bill would you like to add: ")
-            bills.append(bill)
-            payment = float(input(f"What is the monthly cost of {bill}? $"))
-            payment = payment/4
-            payments.append(payment)
-        else:
-            continueon = False
+            print('''Please select on of the options:
+            1. Add bills
+            2. Done adding bills''')
+            option = int(input("Please enter an option: "))
+            
+            if option == 1:
+                print()
+                bill = input("What bill would you like to add: ")
+                bills.append(bill)
+                payment = float(input(f"What is the monthly cost of {bill}? $"))
+                payment = payment/4
+                payments.append(payment)
+            else:
+                continueon = False
+    else:
+        paybill = False
+        print()
+        print("Enjoy this while it lasts")
         
 
     bills_and_payments = [bills,payments]
